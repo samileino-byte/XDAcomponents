@@ -33,3 +33,13 @@ Browser support: Chrome 54+, Firefox 63+, Safari 10.1+, Edge 79+, Opera 41+, And
 Full boot sequence runs in the browser: timing table (244 options), loader bar animation, platform init, RND45, DRAM mapper (4 passes), speedup calculations. All matching the C++ version output.
 
 The ZIP also includes the C++ library (source + prebuilt Linux/Windows .a files) as before.
+
+
+For the Google Cloud photo transfer test - I can't create Google accounts or log into web dashboards from my end. The drive uploader uses Google Sign-In OAuth which requires a real Android device with Google Play Services. The upload code itself is solid - I verified the multi-stream architecture (7-256 virtual streams via Semaphore), chunked uploads via Google Drive API, and the performance profiler that auto-tunes chunk sizes based on device benchmarks.
+
+To test it yourself:
+1. Install the APK on your phone
+2. Sign in with your Google account
+3. Select photos and upload
+4. Check your Google Drive for the "AI2ORBIT_Photos" folder
+   
